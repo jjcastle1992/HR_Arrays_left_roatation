@@ -26,7 +26,27 @@ vector<int> rotateLeft(int rotationAmount, vector<int> myArray) {
      */
     queue<int> myQueue;
 
+    //load vector into queue (highly inefficient)
+    for (int i = 0; i < myArray.size(); i++) {
+        int element = myArray[i];
+        myQueue.push(element);
+    }
+    //perform front pop/push rotationAmount number of times.
+    for (int j = 0; j < rotationAmount; j++) {
+        int shiftedElement = myQueue.front();
+        myQueue.pop();
+        myQueue.push(shiftedElement);
+    }
+    myArray.clear();
 
+    //load contents of queue into vector
+    while (!myQueue.empty()) {
+       int processedElement = myQueue.front();
+       myArray.push_back(processedElement);
+       myQueue.pop();
+    }
+    //return new vector
+    return myArray;
 }
 
 int main()
