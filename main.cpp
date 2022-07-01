@@ -15,7 +15,17 @@ vector<string> split(const string &);
  *  2. INTEGER_ARRAY arr
  */
 
-vector<int> rotateLeft(int d, vector<int> arr) {
+vector<int> rotateLeft(int rotationAmount, vector<int> myArray) {
+    /*
+     * Goal: Create a function that is able to shift an array of size n some units to the left
+     * For example: [1,2,3,4,5] with rotationAmount = 2
+     * newArray = [3,4,5,1,2] where 1,2 "wrapped around the end of the array
+     *
+     * Note: seems like a potentially good use of a FIFO Queue where we push elements in the back & pop them out
+     * Perhaps using a for loop to pop and push the same elements.
+     */
+    queue<int> myQueue;
+
 
 }
 
